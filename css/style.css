@@ -1,0 +1,62 @@
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --primary: #6366f1;
+    --text: #f8fafc;
+    --accent: #10b981;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container { max-width: 1000px; margin: 0 auto; }
+
+.upload-box {
+    border: 2px dashed #475569;
+    padding: 40px;
+    text-align: center;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    background: var(--card);
+}
+
+.upload-box:hover { border-color: var(--primary); background: #2d3748; }
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.result-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 15px;
+    animation: fadeIn 0.4s ease;
+}
+
+.canvas-container {
+    background: #000;
+    margin: 10px 0;
+    height: 150px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+canvas { width: 100%; height: 100%; }
+
+.stats { display: flex; justify-content: space-between; margin-top: 10px; }
+.stat-item label { display: block; font-size: 0.8rem; color: #94a3b8; }
+.stat-item span { font-weight: bold; font-family: monospace; }
+
+.badge-lossless { color: var(--accent); }
+.badge-upscaled { color: #f43f5e; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
